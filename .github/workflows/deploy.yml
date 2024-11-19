@@ -29,7 +29,7 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "sudo apt-get install -y libstdc++6"
+        run: "sudo apt-get install -y software-properties-common && sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test && sudo apt-get update sudo apt-get install -y gcc-12 g++-12 libstdc++6"
 
       - name: Build step
         run: "deno run --allow-all index.js"
